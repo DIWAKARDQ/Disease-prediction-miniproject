@@ -75,9 +75,9 @@ if __name__ == '__main__':
     
     print(f"Total features used for training: {X.shape[1]}")
     
-    # 8. Train the model
-    print("Training Random Forest Classifier...")
-    rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)
+    # 8. Train the model (Optimized for low RAM usage < 512MiB)
+    print("Training Lightweight Random Forest Classifier...")
+    rf_clf = RandomForestClassifier(n_estimators=20, max_depth=25, random_state=42)
     rf_clf.fit(X, y)
     print(f"Model Training Complete. Accuracy on training set: {rf_clf.score(X, y) * 100:.2f}%")
     
